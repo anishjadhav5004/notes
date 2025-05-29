@@ -58,3 +58,13 @@ int main(){
 	
 }
 
+if we are exceeding array length and assign value then its runtime error not compile time
+int arr[2]
+arr[2]=1 //this will be compile time error
+
+when we increament pointer then its get increamented by size of its datatype
+eg. int i =1;
+    int *ptr = &i;
+    ptr++; //here ptr becomes +4
+
+
