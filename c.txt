@@ -1,0 +1,60 @@
+c having 32 key words
+
+format specifiers
+%d %f %c
+
+int c = 1,d; this is valid this means c = 1 and another variable d
+pow(b,c) is right(include <math.h>) , b^c is wrong
+
+modular operator doesn't works on decimal (1.1 % 3.4)
+
+implicit type conversion is done by compiler which converts small to large but not large to small
+eg. int a = 1.1 => wrong 
+    float a = 1  => right 
+
+explicit conversion means converting forcefully by programmer
+eg . int a = (int)1.1
+	output will be 1
+
+
+pointers
+
+#include <stdio.h>
+
+void main() {
+    
+    int age = 22;
+    
+    int *ptr = &age;
+    
+    printf("%p , %p", *ptr,*&age);//same
+    printf("%p , %p", ptr,&age);//same
+}
+
+note : use p or u to print address
+
+typedef is used to give alise to datatypes like structure
+
+
+typedef struct student{
+
+	int id ;
+	char section;
+}std;
+
+int main(){
+
+	std s1; // instead of struct student s1;
+	s1.id =11;
+	s1.section ='a';
+
+	//second case
+
+	typedef int customeINT;
+	customeINT x = 11;
+
+	typedef int myInt x = 10;  // ❌ Invalid syntax
+
+	
+}
+
