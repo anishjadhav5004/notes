@@ -1,0 +1,48 @@
+MyClass obj;       // Stack allocation
+MyClass* objPtr = new MyClass();  // Dynamic allocation
+MyClass obj{};  // ✅ Preferred to avoid confusion
+
+(*objPtr).sayHello();  // ✅ This works
+*objPtr.sayHello();  // ❌ This is incorrect
+
+friendfuction
+
+ const data members must be initialized using a constructor initializer list
+class A {
+    const int x;
+public:
+    A(int val) : x(val) {}  // ✅ OK
+};
+
+class A {
+    const int x;
+public:
+    A(int val) {
+        x = val;  // ❌ Error: assignment to const
+    }
+};
+
+
+You cannot assign to const or reference members inside the constructor body — they must be initialized.
+
+class Demo {
+    const int x;
+    int& ref;
+public:
+    Demo(int a, int& r) : x(a), ref(r) {}  // must use initializer list
+};
+
+
+if object or any varible is get created in heap then you have to manually destroy it destructor doesn't destroy it
+Shape* shape1 = new Circle();
+delete shape1 
+
+//abstract class
+class Shape {
+public:
+    // Pure virtual function
+    virtual void draw() = 0;
+
+    // Virtual destructor (good practice)
+    virtual ~Shape() {}
+};

@@ -1,0 +1,22 @@
+priority queue:
+
+they are using heap(max and mean) internally.
+
+
+map : 
+
+it gives output always in ascending orders
+Allows fast retrieval using the key (typically O(log n) due to underlying Red-Black Tree,self balancing tree)
+
+unorderd map and unorder set: 
+dont store data in order , random data stored
+it having timecomplexity O(1) in worst case its O(n)
+
+set : 
+self balancing tree
+time complexity : log(n)
+set<int>s;
+*(s.lower_bound(3)) ==> this method in set returns at least 3 if available in set otherwise bigger that 3 which exists like 4,5,6 if no bigger or that exact value is present then it return 0
+
+emplace is the method where you just pass pairs directly instead of passing objetct of it , it is alternative to insert
+

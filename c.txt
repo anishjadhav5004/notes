@@ -67,4 +67,147 @@ eg. int i =1;
     int *ptr = &i;
     ptr++; //here ptr becomes +4
 
+C allows implicit type conversion (also called type coercion) during assignment when the value can fit in the target type.
+
+In this case:
+22 is an int
+a is a char
+22 fits in the char range (which is typically -128 to 127 for signed char, or 0 to 255 for unsigned char)
+So the compiler safely converts the value from int to char.
+
+
+signed consists of -v and +ve 
+signed is always converted to unsigned
+
+Shifting left by n positions multiplies the number by 2^n (if no overflow). 
+3 << 2  means Shift bits of 3 left by 2 so it will be 12 (3 × 4)
+
+| Specifier | Type                | Example Value | Notes                          |
+| --------- | ------------------- | ------------- | ------------------------------ |
+| `%d`      | Signed decimal int  | `42`          | Also use `%i` for input/output |
+| `%u`      | Unsigned int        | `42`          | No negative numbers            |
+| `%f`      | Float or double     | `3.14`        | Defaults to 6 decimal places   |
+| `%c`      | Character           | `'A'`         | Prints ASCII character         |
+| `%s`      | String              | `"Hello"`     | Prints characters until `\0`   |
+| `%x`      | Hexadecimal (lower) | `2a`          | Uses 0–9 and a–f               |
+| `%X`      | Hexadecimal (upper) | `2A`          | Uses 0–9 and A–F               |
+| `%o`      | Octal               | `52`          | Base 8                         |
+| `%p`      | Pointer address     | `0x7ffdf123`  | Prints memory address          |
+| `%%`      | Literal `%`         | `%`           | Used to print a percent sign   |
+
+Why does i[str] work?
+In C, a[b] is defined as *(a + b). Addition is commutative (a + b == b + a), so:
+
+str[i] = *(str + i)
+
+i[str] = *(i + str) = *(str + i) = str[i]
+
+It's quirky but valid C.
+
+
+The static variable retains its value between function calls.
+
+Unlike normal local variables (which are created and destroyed each call), a static local variable is initialized only once and lives for the entire program run.
+
+
+| Escape Sequence | Meaning                        | Example Output                |
+| --------------- | ------------------------------ | ----------------------------- |
+| `\n`            | Newline                        | Moves to a new line           |
+| `\t`            | Tab (horizontal)               | Adds a tab space              |
+| `\\`            | Backslash (`\`)                | Prints a single backslash     |
+| `\"`            | Double quote (`"`)             | Prints a double quote         |
+| `\'`            | Single quote (`'`)             | Prints a single quote         |
+| `\?`            | Question mark (`?`)            | Useful in trigraph situations |
+| `\0`            | Null character (end of string) | Used in string termination    |
+| `%%`            | Percent sign in `printf()`     | Prints `%`                    |
+
+a:       | 1 | 2 | 3 | 4 | 5 | 6 |
+address: 1000
+
+a       = 1000  (points to a[0])
+&a      = 1000  (points to entire array of 6 ints)
+&a[0]   = 1000  (address of first element)
+
+a + 1   = 1004  (points to a[1])
+&a + 1  = 1024  (points past entire array: 6 * 4 bytes = 24 bytes ahead)
+
+
+
+printf
+Returns: The number of characters successfully printed (excluding the null terminator).
+int count = printf("Hello, world!\n");
+printf("Printed %d characters\n", count);
+
+Hello, world!
+Printed 14 characters //count \n also
+
+
+scanf
+Returns: The number of input items successfully matched and assigned.
+
+int x, y;
+int count = scanf("%d %d", &x, &y);
+printf("Successfully read %d integers\n", count);
+
+If the user inputs "10 20", count will be 2.
+If input is invalid (e.g., "10 abc"), scanf might return 1 because it matched only the first integer.
+If no input matches at all, it returns 0.
+On end-of-file or error, it returns EOF (usually -1).
+
+
+ ## (Token Pasting)
+#define f(g, g2) g##g2
+f(var, 12) becomes → var12
+
+when signed number is assigned to unsigned int its get wrapup to unsigned int and assigned
+unsigned int x = -1;
+
+when signed and unsigned comparison is done signed gets converted to unsigned
+unsigned int x = -1;
+   int y = ~0;
+   if(x == y)
+      printf("same");
+   else
+      printf("not same");
+
+
+imp
+ #include<stdio.h>
+int main()
+{
+  char *s[] = { "knowledge","is","power"};
+  char **p;
+  p = s;
+  printf("%s ", ++*p);
+  printf("%s ", *p++);
+  printf("%s ", ++*p);
+
+  getchar();
+  return 0;
+}
+
+ char *s[] = { "knowledge","is","power"}; //array of string pointers &s[0]--> "knowledge", &s[1]-->"is"
+
+enum Day {
+    SUNDAY,
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY
+};
+by default
+SUNDAY = 0, MONDAY = 1, TUESDAY = 2, ...
+
+enum constants are like named #define macros — they are fixed integer values at compile-time.
+You can use the value of an enum, but you cannot change what that name refers to.
+
+when you do left shift then basically you are multiplying that number by 2 for i th time (wher i = how much place you want to shift)
+
+and right shift is dividing that no
+
+signed int range -2^31 to 2^31 - 1
+unsingned int range 0 to 2^32-1
+
 
