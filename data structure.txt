@@ -1,0 +1,50 @@
+data structure
+
+tree : 
+*there can be two ways for calculate height one is by node second by edges but most of the channels has given nodes approach
+so height of tree is max number of nodes from root to leaf
+and height of node is max number of nodes from that node to leaf node
+
+degree of node means how much children a node has
+degree of tree means how much maximum children a node has , that node can be anyone from given tree
+
+binary tree : 
+full binary tree (strict tree) : it will be having either 0 or 2 child nodes , 1 node cant allow
+ 
+almost complete binary tree : tree should be filled from left side and it should goes to next level only when it full the previous level
+
+perfect binary tree : this should must have 2 children except leaf node
+
+traversal techniques :time complexity O(n)
+
+in order : root at middle
+preorder : root at start
+post order root at end
+
+all of them are DFS dept first search
+
+level order : this is BFS breadth first search , it gives elements level by level
+
+binary search tree : left handed element should be smaller than right handed , time complexity is log(n) for search , delete , insert
+max height of bst if O(n) and min can be O(logn)
+
+AVL tree (balanced binary tree) :
+tree is balanced when its all nodes are balanced , and node is balanced means its balance factor is {-1,0,1}
+left skewed : tree expands only on left side 
+right skewed : tree expands only on right side
+
+in both the case it took O(n) time to search insert and delete in worst case , but usually binary tree takes log n time for these operations , so to takel this problem avl tree comes into existance which balance the skewed tree
+
+
+
+queue :
+
+1.linear queue
+2.circular queue
+3.priority queue
+4.double ended queue (you can add and delete elements from both the ends)
+
+linear queue 
+
+
+

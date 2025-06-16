@@ -210,4 +210,55 @@ and right shift is dividing that no
 signed int range -2^31 to 2^31 - 1
 unsingned int range 0 to 2^32-1
 
+XOR with itself is 0: --> b⊕b=0
+XOR with 0 keeps the number unchanged:  --> a⊕0=a
+XOR is associative and commutative: --> (a⊕b)⊕c=a⊕(b⊕c) and a⊕b=b⊕a
+
+if number starts with 0 in c then it is treated as octal
+
+in logical or if first statement is true then second is not evaluated 
+int x = 100, y = 200;
+if (++x || ++y)
+    printf("x = %d, y = %d", x, y);
+else
+    printf("condition failed");
+
+in macro direct substitution has done
+but in case of function first paramenters are evaluated and then substitution done
+
+extern means:
+"This variable or function is declared here, but its actual value or code is somewhere else."
+It tells the compiler:
+"Don't create it again — it already exists."
+eg.
+#include<stdio.h>
+int count;
+void display();
+int main()
+{
+    count = 1;
+    printf("Value of count is %d, ", count);
+    display();
+}
+void display()
+{
+      extern int count;
+      printf("\nValue of count is %d", count);
+}
+int a =0
+a = a++ + a++ - a++ + ++a;
+best trick to solve these que is 
+use value and immediately increase it
+
+use a and its value become 1 immediately so for next a++ a will be 1, so use this 1 and immediately increase value to 2
+then use 2 and immediately increase it to 3 and now first increase it 4 and use it
+
+void main()
+{
+    int i = 0;
+    printf("%d %d", i, i++);
+}left to right evalutation
+
+
+
 
