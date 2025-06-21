@@ -51,9 +51,10 @@ basically base class constuctor is called when we create obj of its child class 
 
 below is  Constructor Member Initializer List 
 which is used for constants becoz const members must be initialized at declaration
+either we can assign const member at declaration line or we can assign it by initializers list
 class Demo {
     int a;
-    int b;
+    const int b;
 public:
     Demo(int x, int y) : a(x), b(y) {
         // a and b are initialized before constructor body runs
