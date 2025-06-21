@@ -48,3 +48,20 @@ public:
 };
 
 basically base class constuctor is called when we create obj of its child class , but what if we declare a paramerised constructor in parent class so we can call this constuctore by super in java and by this syntax in cpp ==> Derived(int x) : Base(x) , due to which we can use propertis of parent which is unlocked by parent constructor
+
+below is  Constructor Member Initializer List 
+which is used for constants becoz const members must be initialized at declaration
+class Demo {
+    int a;
+    int b;
+public:
+    Demo(int x, int y) : a(x), b(y) {
+        // a and b are initialized before constructor body runs
+        cout << "Constructor executed\n";
+    }
+
+    void show() {
+        cout << "a = " << a << ", b = " << b << endl;
+    }
+};
+
