@@ -68,3 +68,51 @@ public:
 
 always we need to initialize static variable outside the class by using global scope varible
 
+diamond problem solved by inheriting classes in virtual mode
+class B : virtual public A { };
+class C : virtual public A { };
+class D : public B, public C { };
+which makes only one shared copy of A
+
+
+vertual function :
+
+class Animal {
+public:
+    void sound() { cout << "Animal sound\n"; }
+};
+
+class Dog : public Animal {
+public:
+    void sound() { cout << "Dog barks\n"; }
+};
+
+int main() {
+    Animal* a = new Dog();
+    a->sound();  // ❌ Output: Animal sound
+}
+
+basically it provide runtime behaviour 
+without virtual 
+Animal* a = new Dog();
+a->sound();
+this will alway call base class function
+
+below is example of virtual
+class Animal {
+public:
+    virtual void sound() { cout << "Animal sound\n"; }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override { cout << "Dog barks\n"; }
+};
+
+int main() {
+    Animal* a = new Dog();
+    a->sound();  // ✅ Output: Dog barks
+}
+
+
+
