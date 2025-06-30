@@ -120,6 +120,13 @@ Unlike normal local variables (which are created and destroyed each call), a sta
 | `\?`            | Question mark (`?`)            | Useful in trigraph situations |
 | `\0`            | Null character (end of string) | Used in string termination    |
 | `%%`            | Percent sign in `printf()`     | Prints `%`                    |
+\b removes its recent back character
+"wht\bare you saying"
+result : whare you saying
+
+\r takes cursor to the starting of line again overwrite the character by its next characters
+"good morning \rhello"
+result : hellomornig
 
 a:       | 1 | 2 | 3 | 4 | 5 | 6 |
 address: 1000
@@ -210,11 +217,14 @@ and right shift is dividing that no
 signed int range -2^31 to 2^31 - 1
 unsingned int range 0 to 2^32-1
 
+unsigned char range is 0-255
+signed char range is -128 to 127
+
 XOR with itself is 0: --> b⊕b=0
 XOR with 0 keeps the number unchanged:  --> a⊕0=a
 XOR is associative and commutative: --> (a⊕b)⊕c=a⊕(b⊕c) and a⊕b=b⊕a
 
-if number starts with 0 in c then it is treated as octal
+if number starts with 0 in c then it is treated as octal , 0X as hexadecimal
 
 in logical or if first statement is true then second is not evaluated 
 int x = 100, y = 200;
@@ -257,8 +267,38 @@ void main()
 {
     int i = 0;
     printf("%d %d", i, i++);
-}left to right evalutation
+}
+right to left
 
+
+to convert 11111111 11111111 11111111 11111110 to hexadecimal 
+Group the binary digits into 4-bit chunks, starting from the right. If necessary, add leading zeros to make groups of 4 bits.
+so this results into :
+1111 1111 1111 1111 1111 1111 1111 1110
+
+| Binary | Hexadecimal |
+| ------ | ----------- |
+| 1111   | F           |
+| 1110   | E           |
+
+operator precedence :
+| Precedence Level | Operators                                             | Description                            | Associativity        |               |               |
+| ---------------- | ----------------------------------------------------- | -------------------------------------- | -------------------- | ------------- | ------------- |
+| 1 (Highest)      | `()` `[]` `->` `.`                                    | Function call, array subscript, struct | Left-to-right        |               |               |
+| 2                | `++` `--` `+` `-` `!` `~` `*` `&` `sizeof`            | Unary operators, type casts            | Right-to-left        |               |               |
+| 3                | `*` `/` `%`                                           | Multiplication, division, modulus      | Left-to-right        |               |               |
+| 4                | `+` `-`                                               | Addition, subtraction                  | Left-to-right        |               |               |
+| 5                | `<<` `>>`                                             | Bitwise shift left/right               | Left-to-right        |               |               |
+| 6                | `<` `<=` `>` `>=`                                     | Relational operators                   | Left-to-right        |               |               |
+| 7                | `==` `!=`                                             | Equality operators                     | Left-to-right        |               |               |
+| 8                | `&`                                                   | Bitwise AND                            | Left-to-right        |               |               |
+| 9                | `^`                                                   | Bitwise XOR                            | Left-to-right        |               |               |
+| 10               | \`                                                    | \`                                     | Bitwise OR           | Left-to-right |               |
+| 11               | `&&`                                                  | Logical AND                            | Left-to-right        |               |               |
+| 12               | \`                                                    |                                        | \`                   | Logical OR    | Left-to-right |
+| 13               | `?:`                                                  | Ternary conditional                    | Right-to-left        |               |               |
+| 14               | `=` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `&=` `^=` \` | =\`                                    | Assignment operators | Right-to-left |               |
+| 15               | `,`                                                   | Comma (expression separator)           | Left-to-right        |               |               |
 
 
 

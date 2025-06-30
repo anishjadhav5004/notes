@@ -20,3 +20,13 @@ set<int>s;
 
 emplace is the method where you just pass pairs directly instead of passing objetct of it , it is alternative to insert
 
+vector :
+
+vector<int> vect
+
+vect.end() gives last element +1 position not last position and same in case of vect.rend() which points to one position earlier than start position(reverse end)
+
+
+dque : 
+
+having internal implementation of arrays
