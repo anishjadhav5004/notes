@@ -16,7 +16,9 @@ set :
 self balancing tree
 time complexity : log(n)
 set<int>s;
-*(s.lower_bound(3)) ==> this method in set returns at least 3 if available in set otherwise bigger that 3 which exists like 4,5,6 if no bigger or that exact value is present then it return 0
+*(s.lower_bound(3)) ==> this method in set returns exact value 3 if present , other wise its nearest largest value is returned 
+eg. 4 (if 3 is not present and 4 is present)
+if no bigger or that exact value is present then it return 0
 
 emplace is the method where you just pass pairs directly instead of passing objetct of it , it is alternative to insert
 
