@@ -1,0 +1,13 @@
+os
+
+only one cpu
+single process os : msdos
+batch process os : atlas
+multi programming os : multiple process context switching after wait state ,THE
+multi tasking : it takes time quantam and switch the context of process, CTSS
+
+more cpu
+mulit processing : multiple cpu , windows
+
+distributed os: 
+RTOS : real time os : very accurate(flight control system airplan) 
