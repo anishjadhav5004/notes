@@ -17,13 +17,14 @@ perfect binary tree : this should must have 2 children except leaf node
 
 traversal techniques :time complexity O(n)
 
-in order : root at middle
+in order : root at middle (time complexity for traversal is O(n) beacause it travells all the nodes)
 preorder : root at start
 post order root at end
 
 all of them are DFS dept first search
 
 level order : this is BFS breadth first search , it gives elements level by level
+time complexity will be O(n) and space will be O(n) as we are using queue data structure queue can resides atmost n/2 nodes in it so n/2 ~ n
 
 binary search tree : left handed element should be smaller than right handed , time complexity is log(n) for search , delete , insert
 max height of bst if O(n) and min can be O(logn)
@@ -34,6 +35,9 @@ left skewed : tree expands only on left side
 right skewed : tree expands only on right side
 
 in both the case it took O(n) time to search insert and delete in worst case , but usually binary tree takes log n time for these operations , so to takel this problem avl tree comes into existance which balance the skewed tree
+
+
+
 
 
 
