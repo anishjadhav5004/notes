@@ -15,7 +15,8 @@ almost complete binary tree : tree should be filled from left side and it should
 
 perfect binary tree : this should must have 2 children except leaf node
 
-traversal techniques :time complexity O(n)
+traversal techniques :time complexity O(n) 
+until binary search tree search complexity of binary tree is also O(n) in worst case
 
 in order : root at middle (time complexity for traversal is O(n) beacause it travells all the nodes)
 preorder : root at start
