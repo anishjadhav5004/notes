@@ -37,10 +37,27 @@ right skewed : tree expands only on right side
 
 in both the case it took O(n) time to search insert and delete in worst case , but usually binary tree takes log n time for these operations , so to takel this problem avl tree comes into existance which balance the skewed tree
 
+A B-Tree (Balanced Tree) is a self-balancing tree data structure that maintains sorted data and allows searching, insertion, and deletion operations in logarithmic time (O(log n)).
 
+It’s widely used in databases and file systems because it minimizes disk reads by keeping data organized in blocks or pages — perfect for systems that read/write large chunks of data.
 
+A B-Tree generalizes the concept of a binary search tree (BST) —
+but instead of having only 2 children (left and right),
+each node in a B-Tree can have multiple keys and multiple children.
+           [10, 20]
+          /    |    \
+   [1,5]   [12,15,18]   [25,30]
 
+| Operation     | Time Complexity | Description                              |
+| ------------- | --------------- | ---------------------------------------- |
+| **Search**    | O(log n)        | Like binary search within nodes          |
+| **Insert**    | O(log n)        | Insert in proper leaf, split if overflow |
+| **Delete**    | O(log n)        | May cause merge or redistribution        |
+| **Traversal** | O(n)            | In-order traversal gives sorted data     |
 
+IMP:
+used in db indexing 
+its advance version in B+ tree which stored data in only in leaf node interanl nndes are used for navigation 
 
 queue :
 
