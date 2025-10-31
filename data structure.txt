@@ -22,6 +22,12 @@ in order : root at middle (time complexity for traversal is O(n) beacause it tra
 preorder : root at start
 post order root at end
 
+| Traversal     | Order               | Real-World Use                                |
+| ------------- | ------------------- | --------------------------------------------- |
+| **Inorder**   | Left → Root → Right | Sorted output, DB indexes, infix expressions  |
+| **Preorder**  | Root → Left → Right | when ui is displayed parent compo should be redered first then child , in such cases we use preorder wherer parent needs to execute before child |
+| **Postorder** | Left → Right → Root | Deletion, evaluation, dependency resolution , delete child first then parent in such case   |
+
 all of them are DFS dept first search
 
 level order : this is BFS breadth first search , it gives elements level by level
