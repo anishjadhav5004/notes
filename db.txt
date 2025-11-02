@@ -1,0 +1,11 @@
+trucate cant be rolled backed bt delet from can
+
+cursor is used for  line to line changes in db bcoz usually changes happens in db in group or in a set
+🗑️ DELETE → Removes selected rows, slower, safer, reversible.
+💣 TRUNCATE → Removes all rows instantly, faster, resets identity, not reversible.
+
+✅ Yes, in some databases (like SQL Server, PostgreSQL, and Oracle),
+you can use TRUNCATE inside a transaction, and you can roll it back if you don’t commit yet.
+
+❌ But in others (like MySQL with MyISAM engine),
+TRUNCATE auto-commits — it can’t be rolled back even if you’re inside a transaction.
