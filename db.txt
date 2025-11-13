@@ -9,3 +9,17 @@ you can use TRUNCATE inside a transaction, and you can roll it back if you don�
 
 ❌ But in others (like MySQL with MyISAM engine),
 TRUNCATE auto-commits — it can’t be rolled back even if you’re inside a transaction.
+
+upsert in tsql
+
+merge into table1 as Target
+  using( VALUES (1, 'Anish') ) as source
+  on Target.id = source.id
+when matched then
+update Target
+ set Target.name = source.name
+
+when not matched then
+  insert(name)
+  values(source.name)
+  
