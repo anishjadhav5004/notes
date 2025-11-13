@@ -13,7 +13,7 @@ TRUNCATE auto-commits — it can’t be rolled back even if you’re inside a tr
 upsert in tsql
 
 merge into table1 as Target
-  using( VALUES (1, 'Anish') ) as source
+  using( VALUES (1, 'Anish') ) as source(id,name)
   on Target.id = source.id
 when matched then
 update Target
