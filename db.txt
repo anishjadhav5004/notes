@@ -22,4 +22,7 @@ update Target
 when not matched then
   insert(name)
   values(source.name)
+
+cte : common table express 
+ this is inroduced to store result of any query once nd can be used multiple time , which saves time of calculating same thing again nd again 
   
