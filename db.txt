@@ -25,4 +25,23 @@ when not matched then
 
 cte : common table express 
  this is inroduced to store result of any query once nd can be used multiple time , which saves time of calculating same thing again nd again 
-  
+   
+ recursive cte :
+  WITH cte_name AS
+(
+    -- 1️⃣ Anchor Query (Base case)
+    SELECT column_list
+    FROM table
+    WHERE condition
+
+    UNION ALL
+
+    -- 2️⃣ Recursive Query
+    SELECT column_list
+    FROM table t
+    INNER JOIN cte_name c
+        ON join_condition
+)
+SELECT * FROM cte_name;
+
+
