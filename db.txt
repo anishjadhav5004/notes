@@ -45,3 +45,89 @@ cte : common table express
 SELECT * FROM cte_name;
 
 
+# Full-Text Search (FT Search) — Technical Note
+
+## What is it?
+
+Full-Text Search (FTS) is a technique used to search through the **entire content** of text data (documents, records, fields) rather than just metadata or indexed keywords.
+
+-----
+
+## How it Works
+
+1. Text is **tokenized** — broken into individual words/terms.
+1. Tokens are **indexed** — stored in an inverted index (word → document mapping).
+1. At query time, the engine **matches** the query against the index and returns ranked results.
+
+-----
+
+## Key Concepts
+
+|Concept              |Description                                        |
+|---------------------|---------------------------------------------------|
+|**Inverted Index**   |Maps each word to the documents containing it      |
+|**Tokenization**     |Splitting text into searchable tokens              |
+|**Stemming**         |Reducing words to root form (running → run)        |
+|**Stop Words**       |Common words ignored during indexing (the, and, is)|
+|**Relevance Ranking**|Scoring results by how well they match the query   |
+|**Boolean Search**   |Using AND, OR, NOT operators in queries            |
+
+-----
+
+## Common Use Cases
+
+- Database text search (PostgreSQL, MySQL)
+- Search engines (Google, Bing)
+- E-commerce product search
+- Log & error analysis
+- Document management systems
+- Chat history search
+
+-----
+
+## Tools & Technologies
+
+|Tool                  |FTS Support                  |
+|----------------------|-----------------------------|
+|**Elasticsearch**     |Core feature, highly scalable|
+|**PostgreSQL**        |`tsvector` / `tsquery`       |
+|**MySQL**             |`FULLTEXT` index             |
+|**Redis (RediSearch)**|`FT.SEARCH` command          |
+|**SQLite**            |Built-in FTS5 module         |
+|**MongoDB**           |`$text` operator             |
+
+-----
+
+## Example (PostgreSQL)
+
+```sql
+-- Create index
+CREATE INDEX idx_fts ON articles USING GIN(to_tsvector('english', body));
+
+-- Search query
+SELECT * FROM articles
+WHERE to_tsvector('english', body) @@ to_tsquery('machine & learning');
+```
+
+## Example (Redis FT.SEARCH)
+
+```bash
+FT.SEARCH myIndex "full text query" LIMIT 0 10
+```
+
+-----
+
+## FTS vs LIKE Query
+
+|Feature            |LIKE|Full-Text Search |
+|-------------------|----|-----------------|
+|Speed on large data|Slow|Fast (uses index)|
+|Relevance ranking  |No  |Yes              |
+|Stemming support   |No  |Yes              |
+|Scalability        |Poor|High             |
+
+-----
+
+*Note: FTS is ideal for large, unstructured text datasets where speed and relevance matter.*
+
+
