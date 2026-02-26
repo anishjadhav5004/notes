@@ -1,0 +1,18 @@
+lld
+
+factory pattern retun is object
+nd that kbject we can pass to class as strategy design pattern
+cart.setPaymentStrategy(new CreditCardPayment());
+cart.setPaymentStrategy(new PayPalPayment());
+cart.setPaymentStrategy(new CryptoPayment());
+cart.checkout(); // works with any strategy
+
+here all the paymet methods are given by factory that we are passing to cart as set paymet
+now cart will delegate all the futher payment processing requests to inserted object
+
+eg
+cart.setPaymentStrategy(new CreditCardPayment());
+
+here CreditCardPayment obj is given by factory
+that we insterted into class
+now payment proceessing will be handled by creditcard object
