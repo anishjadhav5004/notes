@@ -1,0 +1,5 @@
+db schema
+
+created table structure in a way that unnecessary joins avoided
+that is denormalization 
+table synonyms created for cross services tables
