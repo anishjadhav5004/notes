@@ -131,3 +131,15 @@ FT.SEARCH myIndex "full text query" LIMIT 0 10
 *Note: FTS is ideal for large, unstructured text datasets where speed and relevance matter.*
 
 
+indexes
+
+core principles behind indexes
+b-tree
+hash
+gin : general inverted index (used for full text search ,tokenised words are stored from any description nd stop words are removed )
+
+
+partial index : only indexes with partial rows are present in main index
+unique undex : only unique value in indexes(by default on unique key column)
+ 
+
