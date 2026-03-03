@@ -141,5 +141,5 @@ gin : general inverted index (used for full text search ,tokenised words are sto
 
 partial index : only indexes with partial rows are present in main index
 unique undex : only unique value in indexes(by default on unique key column)
- 
+composite index : index on combined multiple columns
 
