@@ -75,4 +75,31 @@ queue :
 linear queue 
 
 
+linked list :
 
+doubly linked list is introduced bcoz linear linked list has only one direction traversal
+
+doubly circular linked list is introduced becoz of in doubly linear linked list is was taking time of O(n) to add_at_last() and to delete_at_last() 
+
+when we unlink an object in linked list by delete operation its get deleted from memory with help of free(address of obj) function and we have to manually do this
+but in java we dont need to do this as garbage collector is there 
+
+
+diff bet array and linked list (imp diff only)
+
+in array linkes between elements is maintained by compiler => arr[0] means *(arr+0) which is converted by compiler
+and in linked  list we are maintaining links
+
+searching is efficient in array instead of linked list (quick sort)
+
+
+stack  :
+
+stack has 3 operations push pop pick
+
+it can be implemented by 2 ways
+i) static (by using array)
+ii) dynamic (by using linked list)
+
+
+auxiliary space is space which is temporly used for calculation in algorithm
