@@ -1,7 +1,7 @@
 data structure
 
 tree : 
-*there can be two ways for calculate height one is by node second by edges but most of the channels has given nodes approach
+*there can be two ways for calculate height one is by node , and second is by edges but most of the channels has given nodes approach
 so height of tree is max number of nodes from root to leaf
 and height of node is max number of nodes from that node to leaf node
 
@@ -9,9 +9,9 @@ degree of node means how much children a node has
 degree of tree means how much maximum children a node has , that node can be anyone from given tree
 
 binary tree : 
-full binary tree (strict tree) : it will be having either 0 or 2 child nodes , 1 node cant allow
+full binary tree (strict tree) : it will be having either 0 or 2 child nodes , 1 node can't allow
  
-almost complete binary tree : tree should be filled from left side and it should goes to next level only when it full the previous level
+almost complete binary tree : tree should be filled from left side and it should goes to next level only when its  previous level is full
 
 perfect binary tree : this should must have 2 children except leaf node
 
@@ -31,7 +31,7 @@ post order root at end
 all of them are DFS dept first search
 
 level order : this is BFS breadth first search , it gives elements level by level
-time complexity will be O(n) and space will be O(n) as we are using queue data structure queue can resides atmost n/2 nodes in it so n/2 ~ n
+time complexity will be O(n) and space will be O(n) as we are using queue data structure , queue can resides atmost n/2 nodes in it so n/2 ~ n
 
 binary search tree : left handed element should be smaller than right handed , time complexity is log(n) for search , delete , insert
 max height of bst if O(n) and min can be O(logn)
@@ -44,6 +44,10 @@ right skewed : tree expands only on right side
 in both the case it took O(n) time to search insert and delete in worst case , but usually binary tree takes log n time for these operations , so to takel this problem avl tree comes into existance which balance the skewed tree
 
 A B-Tree (Balanced Tree) is a self-balancing tree data structure that maintains sorted data and allows searching, insertion, and deletion operations in logarithmic time (O(log n)).
+A B-Tree is a self-balancing multi-way search tree where:
+Each node can have more than 2 children
+Data is stored in a sorted manner
+It is optimized for disk access (DB / file systems)
 
 It’s widely used in databases and file systems because it minimizes disk reads by keeping data organized in blocks or pages — perfect for systems that read/write large chunks of data.
 
@@ -63,7 +67,7 @@ each node in a B-Tree can have multiple keys and multiple children.
 
 IMP:
 used in db indexing 
-its advance version in B+ tree which stored data in only in leaf node interanl nndes are used for navigation 
+its advance version in B+ tree which stored data in only in leaf node and interanl n0des are used for navigation 
 
 queue :
 
