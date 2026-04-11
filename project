@@ -9,3 +9,4 @@ intuitions behind cqrs
 both services should be decoupled, right nd read
 use kafka coz if read is off right is saving events
 if write service is off , user can still read
+heavy rights will be there so ,i made read nd write separate to divide the traffic 
