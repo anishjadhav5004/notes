@@ -1,2 +1,23 @@
 master slave archi
 partitioning nd sharding
+
+in sharding 
+if suppose i have 10 complaints nd 
+my user nd complaints in one shard nd while  
+raising 11 th complaint shard get full then??
+
+in that case these configurations 
+Shard capacity > 70% → Alert Ops team
+Shard capacity > 80% → Trigger auto-split
+Shard capacity > 90% → Emergency migration
+
+migration has been done , shard is splitted
+Shard 1          →      Shard 2
+User id 1-500           User id 501-1000
++ their complaints  →   + their complaints (copied)
+
+
+once it done
+Shard 1: deletes user 501-1000 + their complaints
+Shard 2: deletes user 1-500 + their complaints
+
