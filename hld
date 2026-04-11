@@ -21,3 +21,5 @@ once it done
 Shard 1: deletes user 501-1000 + their complaints
 Shard 2: deletes user 1-500 + their complaints
 
+
+cursor based pagination 
