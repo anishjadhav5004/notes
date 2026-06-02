@@ -36,3 +36,15 @@ GPT-4
 Gemini
 Claude
 
+basically its a brain which takes vrctor as input and predict the output
+at training phase parameter fixing/adjusting is done in transformers (optimisarion algo tunes the parameters)
+which is afterward used as inference 
+
+flow
+When you type a prompt:
+1 Your words are turned into vectors.
+2 The Transformer processes them all at once using self-attention.
+3 The data flows through the locked-in parameters (the billions of tuned dials).
+4 The Transformer calculates the highest mathematical probability for what the next vector (word) should be, and predicts it.
+
+
