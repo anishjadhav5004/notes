@@ -53,6 +53,8 @@ When you type a prompt:
 3 The data flows through the locked-in parameters (the billions of tuned dials).
 4 The Transformer calculates the highest mathematical probability for what the next vector (word) should be, and predicts it.
 
+And historically, not all language models used Transformers — older ones used RNNs, LSTMs etc.
+
 halusination
 
 to stop it we train model in such way, while in training phase if model is giving diff ans every time , nuerons value is so uncertain every time (4-5 time) then we tell model to return i dont know orwe tell model to use tools and search in browser nd fetch the info
