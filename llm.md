@@ -27,10 +27,16 @@ King - Man + Woman ≈ Queen
 
 suppose if I searched for some word, according to its vector further predictions can be done , predicated ans will be having similar vectors bcoz they are related
 
+An LLM includes:
+
+1. Transformer architecture
+2. Billions of learned parameters
+3. Training on massive datasets
+4. Fine-tuning and alignment
 
 Transformers 
 
-A Transformer is the neural network architecture that powers models like:
+A Transformer is the neural network design/architecture that powers models like:
 ChatGPT
 GPT-4
 Gemini
