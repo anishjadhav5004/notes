@@ -59,3 +59,51 @@ halusination
 
 to stop it we train model in such way, while in training phase if model is giving diff ans every time , nuerons value is so uncertain every time (4-5 time) then we tell model to return i dont know orwe tell model to use tools and search in browser nd fetch the info
 
+parameters to llm
+T temparate : controls the randomess
+less T means more deterministic ans, Low Temperature (0.0 - 0.3)
+more T means more cretive ans ,High Temperature (0.8 - 1.5)
+
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash",
+    temperature=0.0
+)
+
+Top p
+
+Instead of considering all possible next words, the model only considers the most likely words whose cumulative probability reaches p.
+
+| Word     | Probability |
+| -------- | ----------- |
+| Ronaldo  | 0.50        |
+| Messi    | 0.20        |
+| Football | 0.15        |
+| Cricket  | 0.10        |
+| Banana   | 0.05        |
+
+top_p=0.8
+Ronaldo + Messi + Football
+because their probabilities add up to 0.85.
+
+Top K
+only top K ans are picked
+
+flow: 
+All words
+   ↓
+Top K
+   ↓
+Top P
+   ↓
+Temperature chooses
+
+ex.
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash",
+    temperature=0.7,
+    top_p=0.95,
+    top_k=40
+)
+
