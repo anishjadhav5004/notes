@@ -105,5 +105,44 @@ llm = ChatGoogleGenerativeAI(
     temperature=0.7,
     top_p=0.95,
     top_k=40
+
+
+mcp :
+
+when we add mcp config to llm 
+
+AI
+ ↓
+MCP Server
+ ↓
+Tool 1
+Tool 2
+Tool 3
+Database
+Files
+
+ai first ask to mcp what tools you have , then mcp send all the tools to llm , then llm decides which tool is to call based on users query
+
+mcp server is having all the tools , inside that tool they have certain end point to fetch that particular data
+
+**
+normal tool without mcp :
+
+agent = create_agent(
+    model=model,
+    tools=[get_weather]
+)
+
+and then pass to llm
+
+agent = create_agent(
+    model=model,
+    tools=[get_weather]
+)
+
+tools with mcp :
+
+https://chatgpt.com/s/t_6a3bebea33c081918c2d6b8eec188d2b
+
 )
 
